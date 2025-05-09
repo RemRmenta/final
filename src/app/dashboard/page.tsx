@@ -1,4 +1,5 @@
 'use client';
+
 import dynamic from 'next/dynamic';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -56,7 +57,7 @@ export default function DashboardPage() {
       },
       tooltip: {
         y: {
-          formatter: (value: number, { series, seriesIndex }) => {
+          formatter: (value: number) => {
             const percentage = ((value / total) * 100).toFixed(1);
             return `${value} (${percentage}%)`;
           },
